@@ -41,11 +41,11 @@ body {
     max-width: 320px; }
     .App .user-input .current-location,
     .App .user-input .vpn-location,
-    .App .user-input .text-period {
+    .App .user-input .test-period {
       display: flex; }
       .App .user-input .current-location .input-multi,
       .App .user-input .vpn-location .input-multi,
-      .App .user-input .text-period .input-multi {
+      .App .user-input .test-period .input-multi {
         min-width: 320px; }
 
 /*# sourceMappingURL=index.css.map */
