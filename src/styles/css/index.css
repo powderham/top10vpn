@@ -27,4 +27,25 @@ body {
   padding: 0;
   font-family: sans-serif; }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 5%; }
+  .App .navbar {
+    display: flex;
+    justify-content: space-between; }
+  .App .user-input {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0 0 0;
+    max-width: 320px; }
+    .App .user-input .current-location,
+    .App .user-input .vpn-location,
+    .App .user-input .text-period {
+      display: flex; }
+      .App .user-input .current-location .input-multi,
+      .App .user-input .vpn-location .input-multi,
+      .App .user-input .text-period .input-multi {
+        min-width: 320px; }
+
 /*# sourceMappingURL=index.css.map */
