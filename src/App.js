@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Select from "react-select";
-import { locations } from "./config";
+import { locations, timePeriods, formatJsonObject } from "./config";
 
 class App extends Component {
   constructor(props) {
@@ -21,14 +21,13 @@ class App extends Component {
   handleVpnChange(vpnLocation) {
     this.setState({ vpnLocation });
   }
+  handlePeriodClick(e) {
+    this.setState({ testPeriod: e.target.id });
+  }
   render() {
     const { currentLocation, vpnLocation, testPeriod } = this.state;
-    const selectArray = Object.keys(locations).map(location => {
-      return {
-        value: location,
-        label: locations[location]
-      };
-    });
+    const selectArray = formatJsonObject(locations);
+    const timePeriodArray = formatJsonObject(timePeriods);
     return (
       <div className="App">
         <div className="navbar">
@@ -57,7 +56,7 @@ class App extends Component {
               <Select
                 name="select-box"
                 value={vpnLocation}
-                onChange={this.handleChange}
+                onChange={this.handleVpnChange}
                 options={selectArray}
               />
             </div>
@@ -66,7 +65,13 @@ class App extends Component {
             <div className="input-question">
               <div>Period to test</div>
             </div>
-            <div className="input-multi">Multi choice</div>
+            <div className="input-multi">
+              {timePeriodArray.map(period => (
+                <div onClick={this.handlePeriodClick} id={period.value}>
+                  {period.label}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
