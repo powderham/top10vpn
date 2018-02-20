@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import Select from "react-select";
-import { locations, timePeriods, formatJsonObject } from "./config";
+import {
+  locations,
+  timePeriods,
+  formatJsonObject,
+  prepareEndpoint
+} from "./config";
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +19,8 @@ class App extends Component {
 
     this.handleCurrentChange = this.handleCurrentChange.bind(this);
     this.handleVpnChange = this.handleVpnChange.bind(this);
+    this.handlePeriodClick = this.handlePeriodClick.bind(this);
+    this.fetchResults = this.fetchResults.bind(this);
   }
   handleCurrentChange(currentLocation) {
     this.setState({ currentLocation });
@@ -24,8 +31,22 @@ class App extends Component {
   handlePeriodClick(e) {
     this.setState({ testPeriod: e.target.id });
   }
-  render() {
+  fetchResults() {
     const { currentLocation, vpnLocation, testPeriod } = this.state;
+    if (currentLocation && vpnLocation && testPeriod) {
+      const url = prepareEndpoint(
+        currentLocation.value,
+        vpnLocation.value,
+        testPeriod
+      );
+      fetch(url)
+        .then(response => response.json())
+        .then(results => this.setState({ results }));
+    }
+    //Handle non-complete input
+  }
+  render() {
+    const { currentLocation, vpnLocation, testPeriod, results } = this.state;
     const selectArray = formatJsonObject(locations);
     const timePeriodArray = formatJsonObject(timePeriods);
     return (
@@ -45,6 +66,7 @@ class App extends Component {
                 value={currentLocation}
                 onChange={this.handleCurrentChange}
                 options={selectArray}
+                placeholder=""
               />
             </div>
           </div>
@@ -58,6 +80,7 @@ class App extends Component {
                 value={vpnLocation}
                 onChange={this.handleVpnChange}
                 options={selectArray}
+                placeholder=""
               />
             </div>
           </div>
@@ -67,12 +90,21 @@ class App extends Component {
             </div>
             <div className="input-multi">
               {timePeriodArray.map(period => (
-                <div onClick={this.handlePeriodClick} id={period.value}>
+                <div
+                  key={period.value}
+                  onClick={this.handlePeriodClick}
+                  id={period.value}
+                >
                   {period.label}
                 </div>
               ))}
             </div>
           </div>
+          <div onClick={this.fetchResults}>View results</div>
+          {results &&
+            Object.keys(results).map(result => (
+              <div>{JSON.stringify(result)}</div>
+            ))}
         </div>
       </div>
     );

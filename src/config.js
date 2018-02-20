@@ -20,3 +20,6 @@ export const formatJsonObject = object =>
       label: object[obj]
     };
   });
+
+export const prepareEndpoint = (src, dest, tpd) =>
+  `https://perfapi.perf-data-api.top10vpn-data.prod.top10vpn.co/sdata/results?src=${src}&dest=${dest}&tpd=${tpd}`;
