@@ -4,7 +4,8 @@ import {
   locations,
   timePeriods,
   formatJsonObject,
-  prepareEndpoint
+  prepareEndpoint,
+  offlineApi
 } from "./config";
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
     this.handleVpnChange = this.handleVpnChange.bind(this);
     this.handlePeriodClick = this.handlePeriodClick.bind(this);
     this.fetchResults = this.fetchResults.bind(this);
+    this.fetchOfflineResults = this.fetchOfflineResults.bind(this);
   }
   handleCurrentChange(currentLocation) {
     this.setState({ currentLocation });
@@ -45,6 +47,12 @@ class App extends Component {
     }
     //Handle non-complete input
   }
+
+  fetchOfflineResults() {
+    // this.setState({ offlineApi })
+    setTimeout(() => this.setState({ results: offlineApi }), 2000);
+  }
+
   render() {
     const { currentLocation, vpnLocation, testPeriod, results } = this.state;
     const selectArray = formatJsonObject(locations);
@@ -100,7 +108,7 @@ class App extends Component {
               ))}
             </div>
           </div>
-          <div onClick={this.fetchResults}>View results</div>
+          <div onClick={this.fetchOfflineResults}>View results</div>
           {results &&
             Object.keys(results).map(result => (
               <div>{JSON.stringify(result)}</div>
