@@ -7,6 +7,7 @@ import {
   prepareEndpoint,
   offlineApi
 } from "./config";
+import Result from "./components/Result";
 
 class App extends Component {
   constructor(props) {
@@ -50,7 +51,16 @@ class App extends Component {
 
   fetchOfflineResults() {
     // this.setState({ offlineApi })
-    setTimeout(() => this.setState({ results: offlineApi }), 2000);
+    const results =
+      // Object.keys(offlineApi).map(key => ({
+      //   [key]: offlineApi[key]
+      // }));
+      [
+        ...Object.keys(offlineApi)
+          // Get an array of object from the object of objects
+          .map(key => offlineApi[key])
+      ];
+    setTimeout(() => this.setState({ results: results }), 2000);
   }
 
   render() {
@@ -110,9 +120,16 @@ class App extends Component {
           </div>
           <div onClick={this.fetchOfflineResults}>View results</div>
           {results &&
-            Object.keys(results).map(result => (
-              <div>{JSON.stringify(result)}</div>
-            ))}
+            results.map(result => {
+              console.log(result);
+              return (
+                <Result
+                  serviceName={Object.keys(result)[0]}
+                  dlMbps={result.dlMbps}
+                  pingAvg={result.pingAvg}
+                />
+              );
+            })}
         </div>
       </div>
     );
