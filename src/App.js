@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Select from "react-select";
-
+import InputQuestions from "./components/InputQuestions";
 import {
   locations,
   timePeriods,
@@ -74,55 +73,21 @@ class App extends Component {
           <div>Top10VPN</div>
           <div>|||</div>
         </div>
-        <div className="user-input">
-          <div className="current-location">
-            <div className="input-question">
-              <div>Where are you now?</div>
-            </div>
-            <div className="input-select">
-              <Select
-                name="select-box"
-                value={currentLocation}
-                onChange={this.handleCurrentChange}
-                options={selectArray}
-                placeholder=""
-              />
-            </div>
+        <InputQuestions
+          currentLocation={currentLocation}
+          vpnLocation={vpnLocation}
+          testPeriod={testPeriod}
+          handleCurrentChange={this.handleCurrentChange}
+          handleVpnChange={this.handleVpnChange}
+          handlePeriodClick={this.handlePeriodClick}
+        />
+        <div>
+          <div
+            className="view-results-button"
+            onClick={this.fetchOfflineResults}
+          >
+            View results
           </div>
-          <div className="vpn-location">
-            <div className="input-question">
-              <div>Where do you want to VPN into?</div>
-            </div>
-            <div className="input-select">
-              <Select
-                name="select-box"
-                value={vpnLocation}
-                onChange={this.handleVpnChange}
-                options={selectArray}
-                placeholder=""
-              />
-            </div>
-          </div>
-          <div className="test-period">
-            <div className="input-question">
-              <div>Period to test</div>
-            </div>
-            <div className="input-multi">
-              {timePeriodArray.map(period => (
-                <div
-                  className={`time-period-select ${
-                    period.value === this.state.testPeriod ? "selected" : ""
-                  }`}
-                  key={period.value}
-                  onClick={this.handlePeriodClick}
-                  id={period.value}
-                >
-                  {period.label}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div onClick={this.fetchOfflineResults}>View results</div>
           {results &&
             results.map(result => {
               return (

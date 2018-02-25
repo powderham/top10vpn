@@ -484,12 +484,15 @@ body {
   .App .user-input {
     display: flex;
     flex-direction: column;
+    align-self: center;
     margin: 5% 0 0 0;
     max-width: 320px; }
     .App .user-input .current-location,
     .App .user-input .vpn-location,
     .App .user-input .test-period {
-      display: flex; }
+      display: flex;
+      justify-content: space-between;
+      margin: 5% 0 0 0; }
   .App .test-period {
     flex-direction: column; }
     .App .test-period .input-multi {
@@ -504,9 +507,20 @@ body {
         height: 2em; }
         .App .test-period .input-multi .time-period-select.selected {
           background-color: grey; }
-    .App .test-period .input-qestion,
-    .App .test-period .input-select {
-      width: 50%; }
+  .App .input-qestion,
+  .App .input-select {
+    width: 50%;
+    text-align: left; }
+  .App .view-results-button {
+    margin-top: 5%;
+    height: 2em;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    background: cadetblue;
+    color: white; }
 
 .result-container {
   display: flex;

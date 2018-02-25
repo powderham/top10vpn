@@ -20,6 +20,7 @@ body {
   .user-input {
     display: flex;
     flex-direction: column;
+    align-self: center;
 
     margin: 5% 0 0 0;
     max-width: 320px;
@@ -28,6 +29,9 @@ body {
     .vpn-location,
     .test-period {
       display: flex;
+      justify-content: space-between;
+
+      margin: 5% 0 0 0;
     }
   }
 
@@ -52,11 +56,25 @@ body {
         }
       }
     }
+  }
+  .input-qestion,
+  .input-select {
+    width: 50%;
+    text-align: left;
+  }
 
-    .input-qestion,
-    .input-select {
-      width: 50%;
-    }
+  .view-results-button {
+    margin-top: 5%;
+    height: 2em;
+    width: 30%;
+
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+
+    background: cadetblue;
+    color: white;
   }
 }
 
