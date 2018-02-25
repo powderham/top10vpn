@@ -34,3 +34,55 @@ body {
     }
   }
 }
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2%;
+
+  .result-details {
+    display: flex;
+
+    .result-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2%;
+
+      border: 1px solid grey;
+      width: 33%;
+      height: 4em;
+
+      text-align: left;
+
+      .result-detail-title {
+        margin-bottom: 5%;
+        color: grey;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .result-header {
+    display: flex;
+    align-items: center;
+
+    padding: 2%;
+
+    height: 3em;
+    border: 1px solid grey;
+
+    .result-logo {
+      margin-right: 5px;
+
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: pink;
+    }
+    .result-name {
+      font-weight: 600;
+    }
+  }
+}
