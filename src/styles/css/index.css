@@ -522,6 +522,10 @@ body {
     background: cadetblue;
     color: white; }
 
+.result-input-text {
+  display: flex;
+  justify-content: space-between; }
+
 .result-container {
   display: flex;
   flex-direction: column;

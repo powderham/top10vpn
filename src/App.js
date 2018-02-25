@@ -24,6 +24,7 @@ class App extends Component {
     this.handlePeriodClick = this.handlePeriodClick.bind(this);
     this.fetchResults = this.fetchResults.bind(this);
     this.fetchOfflineResults = this.fetchOfflineResults.bind(this);
+    this.handleResultView = this.handleResultView.bind(this);
   }
   handleCurrentChange(currentLocation) {
     this.setState({ currentLocation });
@@ -63,8 +64,19 @@ class App extends Component {
     setTimeout(() => this.setState({ results: results }), 2000);
   }
 
+  handleResultView() {
+    this.setState({ viewingResults: true });
+    this.fetchOfflineResults();
+  }
+
   render() {
-    const { currentLocation, vpnLocation, testPeriod, results } = this.state;
+    const {
+      currentLocation,
+      vpnLocation,
+      testPeriod,
+      results,
+      viewingResults
+    } = this.state;
     const selectArray = formatJsonObject(locations);
     const timePeriodArray = formatJsonObject(timePeriods);
     return (
@@ -73,33 +85,48 @@ class App extends Component {
           <div>Top10VPN</div>
           <div>|||</div>
         </div>
-        <InputQuestions
-          currentLocation={currentLocation}
-          vpnLocation={vpnLocation}
-          testPeriod={testPeriod}
-          handleCurrentChange={this.handleCurrentChange}
-          handleVpnChange={this.handleVpnChange}
-          handlePeriodClick={this.handlePeriodClick}
-        />
-        <div>
-          <div
-            className="view-results-button"
-            onClick={this.fetchOfflineResults}
-          >
-            View results
+        {!viewingResults ? (
+          <div>
+            <InputQuestions
+              currentLocation={currentLocation}
+              vpnLocation={vpnLocation}
+              testPeriod={testPeriod}
+              handleCurrentChange={this.handleCurrentChange}
+              handleVpnChange={this.handleVpnChange}
+              handlePeriodClick={this.handlePeriodClick}
+            />
+            <div
+              className="view-results-button"
+              onClick={this.handleResultView}
+            >
+              View results
+            </div>
           </div>
-          {results &&
-            results.map(result => {
-              return (
-                <Result
-                  key={results[result]}
-                  serviceName={results[result]}
-                  dlMbps={result.dlMbps}
-                  pingAvg={result.pingAvg}
-                />
-              );
-            })}
-        </div>
+        ) : (
+          <div>
+            <div className="result-input-text">
+              <div>
+                {`${currentLocation.label} - ${
+                  vpnLocation.label
+                }, Last ${testPeriod} days`}
+              </div>
+              <div onClick={() => this.setState({ viewingResults: false })}>
+                Change
+              </div>
+            </div>
+            {results &&
+              results.map(result => {
+                return (
+                  <Result
+                    key={results[result]}
+                    serviceName={results[result]}
+                    dlMbps={result.dlMbps}
+                    pingAvg={result.pingAvg}
+                  />
+                );
+              })}
+          </div>
+        )}
       </div>
     );
   }

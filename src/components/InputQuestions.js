@@ -78,7 +78,7 @@ class InputQuestions extends Component {
 InputQuestions.propTypes = {
   currentLocation: PropTypes.object,
   vpnLocation: PropTypes.object,
-  testPeriod: PropTypes.object,
+  testPeriod: PropTypes.string,
   handleCurrentChange: PropTypes.func.isRequired,
   handleVpnChange: PropTypes.func.isRequired,
   handlePeriodClick: PropTypes.func.isRequired
