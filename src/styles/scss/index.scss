@@ -1,4 +1,5 @@
 @import "App";
+@import "Select";
 
 body {
   margin: 0;
@@ -27,10 +28,34 @@ body {
     .vpn-location,
     .test-period {
       display: flex;
+    }
+  }
 
-      .input-multi {
-        min-width: 320px;
+  .test-period {
+    flex-direction: column;
+
+    .input-multi {
+      min-width: 320px;
+      display: flex;
+
+      .time-period-select {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid grey;
+
+        width: 33%;
+        height: 2em;
+
+        &.selected {
+          background-color: grey;
+        }
       }
+    }
+
+    .input-qestion,
+    .input-select {
+      width: 50%;
     }
   }
 }

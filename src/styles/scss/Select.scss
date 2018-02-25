@@ -1,27 +1,3 @@
-.App {
-  text-align: center; }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
-
-.App-title {
-  font-size: 1.5em; }
-
-.App-intro {
-  font-size: large; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
 /**
  * React Select
  * ============
@@ -30,127 +6,128 @@
  * MIT License: https://github.com/JedWatson/react-select
 */
 .Select {
-  position: relative; }
-
+  position: relative;
+}
 .Select input::-webkit-contacts-auto-fill-button,
 .Select input::-webkit-credentials-auto-fill-button {
-  display: none !important; }
-
+  display: none !important;
+}
 .Select input::-ms-clear {
-  display: none !important; }
-
+  display: none !important;
+}
 .Select input::-ms-reveal {
-  display: none !important; }
-
+  display: none !important;
+}
 .Select,
 .Select div,
 .Select input,
 .Select span {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
+  box-sizing: border-box;
+}
 .Select.is-disabled .Select-arrow-zone {
   cursor: default;
   pointer-events: none;
-  opacity: 0.35; }
-
+  opacity: 0.35;
+}
 .Select.is-disabled > .Select-control {
-  background-color: #f9f9f9; }
-
+  background-color: #f9f9f9;
+}
 .Select.is-disabled > .Select-control:hover {
-  box-shadow: none; }
-
+  box-shadow: none;
+}
 .Select.is-open > .Select-control {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background: #fff;
-  border-color: #b3b3b3 #ccc #d9d9d9; }
-
+  border-color: #b3b3b3 #ccc #d9d9d9;
+}
 .Select.is-open > .Select-control .Select-arrow {
   top: -2px;
   border-color: transparent transparent #999;
-  border-width: 0 5px 5px; }
-
+  border-width: 0 5px 5px;
+}
 .Select.is-searchable.is-open > .Select-control {
-  cursor: text; }
-
+  cursor: text;
+}
 .Select.is-searchable.is-focused:not(.is-open) > .Select-control {
-  cursor: text; }
-
+  cursor: text;
+}
 .Select.is-focused > .Select-control {
-  background: #fff; }
-
+  background: #fff;
+}
 .Select.is-focused:not(.is-open) > .Select-control {
   border-color: #007eff;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
-  background: #fff; }
-
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 0 3px rgba(0, 126, 255, 0.1);
+  background: #fff;
+}
 .Select.has-value.is-clearable.Select--single > .Select-control .Select-value {
-  padding-right: 42px; }
-
+  padding-right: 42px;
+}
 .Select.has-value.Select--single
-> .Select-control
-.Select-value
-.Select-value-label,
+  > .Select-control
+  .Select-value
+  .Select-value-label,
 .Select.has-value.is-pseudo-focused.Select--single
-> .Select-control
-.Select-value
-.Select-value-label {
-  color: #333; }
-
+  > .Select-control
+  .Select-value
+  .Select-value-label {
+  color: #333;
+}
 .Select.has-value.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label,
+  > .Select-control
+  .Select-value
+  a.Select-value-label,
 .Select.has-value.is-pseudo-focused.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label {
+  > .Select-control
+  .Select-value
+  a.Select-value-label {
   cursor: pointer;
-  text-decoration: none; }
-
+  text-decoration: none;
+}
 .Select.has-value.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label:hover,
+  > .Select-control
+  .Select-value
+  a.Select-value-label:hover,
 .Select.has-value.is-pseudo-focused.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label:hover,
+  > .Select-control
+  .Select-value
+  a.Select-value-label:hover,
 .Select.has-value.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label:focus,
+  > .Select-control
+  .Select-value
+  a.Select-value-label:focus,
 .Select.has-value.is-pseudo-focused.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label:focus {
+  > .Select-control
+  .Select-value
+  a.Select-value-label:focus {
   color: #007eff;
   outline: none;
-  text-decoration: underline; }
-
+  text-decoration: underline;
+}
 .Select.has-value.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label:focus,
+  > .Select-control
+  .Select-value
+  a.Select-value-label:focus,
 .Select.has-value.is-pseudo-focused.Select--single
-> .Select-control
-.Select-value
-a.Select-value-label:focus {
-  background: #fff; }
-
+  > .Select-control
+  .Select-value
+  a.Select-value-label:focus {
+  background: #fff;
+}
 .Select.has-value.is-pseudo-focused .Select-input {
-  opacity: 0; }
-
+  opacity: 0;
+}
 .Select.is-open .Select-arrow,
 .Select .Select-arrow-zone:hover > .Select-arrow {
-  border-top-color: #666; }
-
+  border-top-color: #666;
+}
 .Select.Select--rtl {
   direction: rtl;
-  text-align: right; }
-
+  text-align: right;
+}
 .Select-control {
   background-color: #fff;
   border-color: #d9d9d9 #ccc #b3b3b3;
@@ -165,15 +142,15 @@ a.Select-value-label:focus {
   outline: none;
   overflow: hidden;
   position: relative;
-  width: 100%; }
-
+  width: 100%;
+}
 .Select-control:hover {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06); }
-
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
 .Select-control .Select-input:focus {
   outline: none;
-  background: #fff; }
-
+  background: #fff;
+}
 .Select-placeholder,
 .Select--single > .Select-control .Select-value {
   bottom: 0;
@@ -188,14 +165,14 @@ a.Select-value-label:focus {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; }
-
+  white-space: nowrap;
+}
 .Select-input {
   height: 34px;
   padding-left: 10px;
   padding-right: 10px;
-  vertical-align: middle; }
-
+  vertical-align: middle;
+}
 .Select-input > input {
   width: 100%;
   background: none transparent;
@@ -211,25 +188,25 @@ a.Select-value-label:focus {
   /* For IE 8 compatibility */
   padding: 8px 0 12px;
   /* For IE 8 compatibility */
-  -webkit-appearance: none; }
-
+  -webkit-appearance: none;
+}
 .is-focused .Select-input > input {
-  cursor: text; }
-
+  cursor: text;
+}
 .has-value.is-pseudo-focused .Select-input {
-  opacity: 0; }
-
+  opacity: 0;
+}
 .Select-control:not(.is-searchable) > .Select-input {
-  outline: none; }
-
+  outline: none;
+}
 .Select-loading-zone {
   cursor: pointer;
   display: table-cell;
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 16px; }
-
+  width: 16px;
+}
 .Select-loading {
   -webkit-animation: Select-animation-spin 400ms infinite linear;
   -o-animation: Select-animation-spin 400ms infinite linear;
@@ -242,8 +219,8 @@ a.Select-value-label:focus {
   border-right-color: #333;
   display: inline-block;
   position: relative;
-  vertical-align: middle; }
-
+  vertical-align: middle;
+}
 .Select-clear-zone {
   -webkit-animation: Select-animation-fadeIn 200ms;
   -o-animation: Select-animation-fadeIn 200ms;
@@ -254,19 +231,19 @@ a.Select-value-label:focus {
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 17px; }
-
+  width: 17px;
+}
 .Select-clear-zone:hover {
-  color: #d0021b; }
-
+  color: #d0021b;
+}
 .Select-clear {
   display: inline-block;
   font-size: 18px;
-  line-height: 1; }
-
+  line-height: 1;
+}
 .Select--multi .Select-clear-zone {
-  width: 17px; }
-
+  width: 17px;
+}
 .Select-arrow-zone {
   cursor: pointer;
   display: table-cell;
@@ -274,12 +251,12 @@ a.Select-value-label:focus {
   text-align: center;
   vertical-align: middle;
   width: 25px;
-  padding-right: 5px; }
-
+  padding-right: 5px;
+}
 .Select--rtl .Select-arrow-zone {
   padding-right: 0;
-  padding-left: 5px; }
-
+  padding-left: 5px;
+}
 .Select-arrow {
   border-color: #999 transparent transparent;
   border-style: solid;
@@ -287,14 +264,14 @@ a.Select-value-label:focus {
   display: inline-block;
   height: 0;
   width: 0;
-  position: relative; }
-
+  position: relative;
+}
 .Select-control > *:last-child {
-  padding-right: 5px; }
-
+  padding-right: 5px;
+}
 .Select--multi .Select-multi-value-wrapper {
-  display: inline-block; }
-
+  display: inline-block;
+}
 .Select .Select-aria-only {
   position: absolute;
   display: inline-block;
@@ -303,18 +280,24 @@ a.Select-value-label:focus {
   margin: -1px;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
-  float: left; }
-
+  float: left;
+}
 @-webkit-keyframes Select-animation-fadeIn {
   from {
-    opacity: 0; }
+    opacity: 0;
+  }
   to {
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
 @keyframes Select-animation-fadeIn {
   from {
-    opacity: 0; }
+    opacity: 0;
+  }
   to {
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
 .Select-menu-outer {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -330,59 +313,59 @@ a.Select-value-label:focus {
   top: 100%;
   width: 100%;
   z-index: 1;
-  -webkit-overflow-scrolling: touch; }
-
+  -webkit-overflow-scrolling: touch;
+}
 .Select-menu {
   max-height: 198px;
-  overflow-y: auto; }
-
+  overflow-y: auto;
+}
 .Select-option {
   box-sizing: border-box;
   background-color: #fff;
   color: #666666;
   cursor: pointer;
   display: block;
-  padding: 8px 10px; }
-
+  padding: 8px 10px;
+}
 .Select-option:last-child {
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px; }
-
+  border-bottom-left-radius: 4px;
+}
 .Select-option.is-selected {
   background-color: #f5faff;
   /* Fallback color for IE 8 */
   background-color: rgba(0, 126, 255, 0.04);
-  color: #333; }
-
+  color: #333;
+}
 .Select-option.is-focused {
   background-color: #ebf5ff;
   /* Fallback color for IE 8 */
   background-color: rgba(0, 126, 255, 0.08);
-  color: #333; }
-
+  color: #333;
+}
 .Select-option.is-disabled {
   color: #cccccc;
-  cursor: default; }
-
+  cursor: default;
+}
 .Select-noresults {
   box-sizing: border-box;
   color: #999999;
   cursor: default;
   display: block;
-  padding: 8px 10px; }
-
+  padding: 8px 10px;
+}
 .Select--multi .Select-input {
   vertical-align: middle;
   margin-left: 10px;
-  padding: 0; }
-
+  padding: 0;
+}
 .Select--multi.Select--rtl .Select-input {
   margin-left: 0;
-  margin-right: 10px; }
-
+  margin-right: 10px;
+}
 .Select--multi.has-value .Select-input {
-  margin-left: 5px; }
-
+  margin-left: 5px;
+}
 .Select--multi .Select-value {
   background-color: #ebf5ff;
   /* Fallback color for IE 8 */
@@ -397,27 +380,27 @@ a.Select-value-label:focus {
   line-height: 1.4;
   margin-left: 5px;
   margin-top: 5px;
-  vertical-align: top; }
-
+  vertical-align: top;
+}
 .Select--multi .Select-value-icon,
 .Select--multi .Select-value-label {
   display: inline-block;
-  vertical-align: middle; }
-
+  vertical-align: middle;
+}
 .Select--multi .Select-value-label {
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   cursor: default;
-  padding: 2px 5px; }
-
+  padding: 2px 5px;
+}
 .Select--multi a.Select-value-label {
   color: #007eff;
   cursor: pointer;
-  text-decoration: none; }
-
+  text-decoration: none;
+}
 .Select--multi a.Select-value-label:hover {
-  text-decoration: underline; }
-
+  text-decoration: underline;
+}
 .Select--multi .Select-value-icon {
   cursor: pointer;
   border-bottom-left-radius: 2px;
@@ -425,121 +408,51 @@ a.Select-value-label:focus {
   border-right: 1px solid #c2e0ff;
   /* Fallback color for IE 8 */
   border-right: 1px solid rgba(0, 126, 255, 0.24);
-  padding: 1px 5px 3px; }
-
+  padding: 1px 5px 3px;
+}
 .Select--multi .Select-value-icon:hover,
 .Select--multi .Select-value-icon:focus {
   background-color: #d8eafd;
   /* Fallback color for IE 8 */
   background-color: rgba(0, 113, 230, 0.08);
-  color: #0071e6; }
-
+  color: #0071e6;
+}
 .Select--multi .Select-value-icon:active {
   background-color: #c2e0ff;
   /* Fallback color for IE 8 */
-  background-color: rgba(0, 126, 255, 0.24); }
-
+  background-color: rgba(0, 126, 255, 0.24);
+}
 .Select--multi.Select--rtl .Select-value {
   margin-left: 0;
-  margin-right: 5px; }
-
+  margin-right: 5px;
+}
 .Select--multi.Select--rtl .Select-value-icon {
   border-right: none;
   border-left: 1px solid #c2e0ff;
   /* Fallback color for IE 8 */
-  border-left: 1px solid rgba(0, 126, 255, 0.24); }
-
+  border-left: 1px solid rgba(0, 126, 255, 0.24);
+}
 .Select--multi.is-disabled .Select-value {
   background-color: #fcfcfc;
   border: 1px solid #e3e3e3;
-  color: #333; }
-
+  color: #333;
+}
 .Select--multi.is-disabled .Select-value-icon {
   cursor: not-allowed;
-  border-right: 1px solid #e3e3e3; }
-
+  border-right: 1px solid #e3e3e3;
+}
 .Select--multi.is-disabled .Select-value-icon:hover,
 .Select--multi.is-disabled .Select-value-icon:focus,
 .Select--multi.is-disabled .Select-value-icon:active {
-  background-color: #fcfcfc; }
-
+  background-color: #fcfcfc;
+}
 @keyframes Select-animation-spin {
   to {
-    transform: rotate(1turn); } }
+    transform: rotate(1turn);
+  }
+}
 @-webkit-keyframes Select-animation-spin {
   to {
-    -webkit-transform: rotate(1turn); } }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif; }
-
-.App {
-  display: flex;
-  flex-direction: column;
-  padding: 5%; }
-  .App .navbar {
-    display: flex;
-    justify-content: space-between; }
-  .App .user-input {
-    display: flex;
-    flex-direction: column;
-    margin: 5% 0 0 0;
-    max-width: 320px; }
-    .App .user-input .current-location,
-    .App .user-input .vpn-location,
-    .App .user-input .test-period {
-      display: flex; }
-  .App .test-period {
-    flex-direction: column; }
-    .App .test-period .input-multi {
-      min-width: 320px;
-      display: flex; }
-      .App .test-period .input-multi .time-period-select {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid grey;
-        width: 33%;
-        height: 2em; }
-        .App .test-period .input-multi .time-period-select.selected {
-          background-color: grey; }
-    .App .test-period .input-qestion,
-    .App .test-period .input-select {
-      width: 50%; }
-
-.result-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2%; }
-  .result-container .result-details {
-    display: flex; }
-    .result-container .result-details .result-detail {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 2%;
-      border: 1px solid grey;
-      width: 33%;
-      height: 4em;
-      text-align: left; }
-      .result-container .result-details .result-detail .result-detail-title {
-        margin-bottom: 5%;
-        color: grey;
-        font-size: 0.8em; }
-  .result-container .result-header {
-    display: flex;
-    align-items: center;
-    padding: 2%;
-    height: 3em;
-    border: 1px solid grey; }
-    .result-container .result-header .result-logo {
-      margin-right: 5px;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background-color: pink; }
-    .result-container .result-header .result-name {
-      font-weight: 600; }
-
-/*# sourceMappingURL=index.css.map */
+    -webkit-transform: rotate(1turn);
+  }
+}

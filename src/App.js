@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Select from "react-select";
+
 import {
   locations,
   timePeriods,
@@ -109,6 +110,9 @@ class App extends Component {
             <div className="input-multi">
               {timePeriodArray.map(period => (
                 <div
+                  className={`time-period-select ${
+                    period.value === this.state.testPeriod ? "selected" : ""
+                  }`}
                   key={period.value}
                   onClick={this.handlePeriodClick}
                   id={period.value}
@@ -121,10 +125,10 @@ class App extends Component {
           <div onClick={this.fetchOfflineResults}>View results</div>
           {results &&
             results.map(result => {
-              console.log(result);
               return (
                 <Result
-                  serviceName={Object.keys(result)[0]}
+                  key={results[result]}
+                  serviceName={results[result]}
                   dlMbps={result.dlMbps}
                   pingAvg={result.pingAvg}
                 />
