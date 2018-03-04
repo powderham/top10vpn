@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputQuestions from "./components/InputQuestions";
+import ResultContainer from "../src/containers/ResultContainer";
 import {
   locations,
   timePeriods,
@@ -117,40 +118,12 @@ class App extends Component {
             </div>
           </div>
         ) : (
-          <div>
-            <div className="result-input-text">
-              <div>
-                {`${currentLocation.label} - ${
-                  vpnLocation.label
-                }, Last ${testPeriod} days`}
-              </div>
-              <div
-                className="change-input"
-                onClick={() => this.setState({ viewingResults: false })}
-              >
-                Change
-              </div>
-            </div>
-            <div className="result-container">
-              {results ? (
-                results.map(result => {
-                  return (
-                    <Result
-                      key={results.displayName}
-                      displayName={result.displayName}
-                      dlMbps={result.dlMbps}
-                      pingAvg={result.pingAvg}
-                    />
-                  );
-                })
-              ) : (
-                <div>
-                  <span className="fa fa-circle-notch" />
-                  Loading
-                </div>
-              )}
-            </div>
-          </div>
+          <ResultContainer
+            currentLocation={currentLocation}
+            vpnLocation={vpnLocation}
+            results={results}
+            testPeriod={testPeriod}
+          />
         )}
       </div>
     );
