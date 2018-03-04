@@ -8,6 +8,7 @@ import {
   prepareEndpoint,
   offlineApi
 } from "../config";
+import "../styles/css/index.css";
 
 class InputQuestions extends Component {
   render() {
@@ -23,7 +24,8 @@ class InputQuestions extends Component {
     } = this.props;
     return (
       <div className="user-input">
-        <div className="current-location">
+        <p className="input-header">VPN Speed Test</p>
+        <div className="current-location input-container">
           <div className="input-question">
             <div>Where are you now?</div>
           </div>
@@ -34,10 +36,17 @@ class InputQuestions extends Component {
               onChange={handleCurrentChange}
               options={selectArray}
               placeholder=""
+              menuContainerStyle={{ backgroundColor: "#E6F5FC" }}
+              menuStyle={{ backgroundColor: "#E6F5FC" }}
+              style={{
+                backgroundColor: "#E6F5FC",
+                borderRadius: 0,
+                width: 153
+              }}
             />
           </div>
         </div>
-        <div className="vpn-location">
+        <div className="vpn-location input-container">
           <div className="input-question">
             <div>Where do you want to VPN into?</div>
           </div>
@@ -48,10 +57,17 @@ class InputQuestions extends Component {
               onChange={handleVpnChange}
               options={selectArray}
               placeholder=""
+              menuContainerStyle={{ backgroundColor: "#E6F5FC" }}
+              menuStyle={{ backgroundColor: "#E6F5FC" }}
+              style={{
+                backgroundColor: "#E6F5FC",
+                borderRadius: 0,
+                width: 153
+              }}
             />
           </div>
         </div>
-        <div className="test-period">
+        <div className="test-period input-container">
           <div className="input-question">
             <div>Period to test</div>
           </div>

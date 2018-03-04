@@ -1,5 +1,6 @@
 @import "App";
 @import "Select";
+@import "Variables";
 
 body {
   margin: 0;
@@ -33,6 +34,9 @@ body {
 
       margin: 5% 0 0 0;
     }
+    .input-select {
+      align-self: flex-end;
+    }
   }
 
   .test-period {
@@ -46,35 +50,36 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid grey;
+        border: 1px solid $grey;
 
         width: 33%;
         height: 2em;
 
         &.selected {
-          background-color: grey;
+          background-color: $blue-light;
         }
       }
     }
   }
-  .input-qestion,
-  .input-select {
-    width: 50%;
-    text-align: left;
-  }
 
-  .view-results-button {
-    margin-top: 5%;
-    height: 2em;
-    width: 30%;
-
+  .view-results-button-container {
     display: flex;
-    align-items: center;
-    align-self: center;
     justify-content: center;
 
-    background: cadetblue;
-    color: white;
+    .view-results-button {
+      margin-top: 5%;
+      height: 40px;
+      width: 150px;
+
+      display: flex;
+      align-items: center;
+      align-self: center;
+      justify-content: space-around;
+
+      background: $blue;
+      color: white;
+      font-size: 14px;
+    }
   }
 }
 
@@ -98,7 +103,7 @@ body {
       justify-content: space-between;
       padding: 2%;
 
-      border: 1px solid grey;
+      border: 1px solid $grey;
       width: 33%;
       height: 4em;
 
@@ -106,7 +111,7 @@ body {
 
       .result-detail-title {
         margin-bottom: 5%;
-        color: grey;
+        color: rgb(250, 159, 159);
         font-size: 0.8em;
       }
     }
@@ -119,7 +124,7 @@ body {
     padding: 2%;
 
     height: 3em;
-    border: 1px solid grey;
+    border: 1px solid $grey;
 
     .result-logo {
       margin-right: 5px;
@@ -133,4 +138,15 @@ body {
       font-weight: 600;
     }
   }
+}
+
+.input-header {
+  font-size: 18px;
+  text-align: left;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
 }

@@ -8,6 +8,7 @@ import {
   offlineApi
 } from "./config";
 import Result from "./components/Result";
+import "../src/styles/css/index.css";
 
 class App extends Component {
   constructor(props) {
@@ -43,8 +44,17 @@ class App extends Component {
         vpnLocation.value,
         testPeriod
       );
+      console.log(url);
       fetch(url)
         .then(response => response.json())
+        .then(response => {
+          console.log(response);
+          return [
+            ...Object.keys(response)
+              // Get an array of object from the object of objects
+              .map(result => response[result])
+          ];
+        })
         .then(results => this.setState({ results }));
     }
     //Handle non-complete input
@@ -64,9 +74,9 @@ class App extends Component {
     setTimeout(() => this.setState({ results: results }), 2000);
   }
 
-  handleResultView() {
+  async handleResultView() {
+    await this.fetchResults();
     this.setState({ viewingResults: true });
-    this.fetchOfflineResults();
   }
 
   render() {
@@ -83,7 +93,9 @@ class App extends Component {
       <div className="App">
         <div className="navbar">
           <div>Top10VPN</div>
-          <div>|||</div>
+          <div>
+            <i className="fa fa-bars" />
+          </div>
         </div>
         {!viewingResults ? (
           <div>
@@ -95,11 +107,13 @@ class App extends Component {
               handleVpnChange={this.handleVpnChange}
               handlePeriodClick={this.handlePeriodClick}
             />
-            <div
-              className="view-results-button"
-              onClick={this.handleResultView}
-            >
-              View results
+            <div className="view-results-button-container">
+              <div
+                className="view-results-button"
+                onClick={this.handleResultView}
+              >
+                <span className="fa fa-chevron-down" />View Results
+              </div>
             </div>
           </div>
         ) : (
@@ -110,6 +124,7 @@ class App extends Component {
                   vpnLocation.label
                 }, Last ${testPeriod} days`}
               </div>
+
               <div onClick={() => this.setState({ viewingResults: false })}>
                 Change
               </div>
