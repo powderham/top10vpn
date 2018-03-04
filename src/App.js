@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import InputQuestions from "./components/InputQuestions";
 import ResultContainer from "../src/containers/ResultContainer";
+import InputContainer from "../src/containers/InputContainer";
 import {
   locations,
   timePeriods,
@@ -27,6 +27,7 @@ class App extends Component {
     this.fetchResults = this.fetchResults.bind(this);
     this.fetchOfflineResults = this.fetchOfflineResults.bind(this);
     this.handleResultView = this.handleResultView.bind(this);
+    this.updateInput = this.updateInput.bind(this);
   }
   handleCurrentChange(currentLocation) {
     this.setState({ currentLocation });
@@ -45,7 +46,7 @@ class App extends Component {
         vpnLocation.value,
         testPeriod
       );
-      fetch(url)
+      return fetch(url)
         .then(response => response.json())
         .then(response => {
           return [
@@ -57,6 +58,10 @@ class App extends Component {
         .then(results => this.setState({ results }));
     }
     //Handle non-complete input
+  }
+
+  updateInput() {
+    this.setState({ viewingResults: false });
   }
 
   fetchOfflineResults() {
@@ -99,30 +104,22 @@ class App extends Component {
           </div>
         </div>
         {!viewingResults ? (
-          <div>
-            <InputQuestions
-              currentLocation={currentLocation}
-              vpnLocation={vpnLocation}
-              testPeriod={testPeriod}
-              handleCurrentChange={this.handleCurrentChange}
-              handleVpnChange={this.handleVpnChange}
-              handlePeriodClick={this.handlePeriodClick}
-            />
-            <div className="view-results-button-container">
-              <div
-                className="view-results-button"
-                onClick={this.handleResultView}
-              >
-                <span className="fa fa-chevron-down" />View Results
-              </div>
-            </div>
-          </div>
+          <InputContainer
+            currentLocation={currentLocation}
+            vpnLocation={vpnLocation}
+            testPeriod={testPeriod}
+            handleCurrentChange={this.handleCurrentChange}
+            handleVpnChange={this.handleVpnChange}
+            handlePeriodClick={this.handlePeriodClick}
+            handleResultView={this.handleResultView}
+          />
         ) : (
           <ResultContainer
             currentLocation={currentLocation}
             vpnLocation={vpnLocation}
             results={results}
             testPeriod={testPeriod}
+            updateInput={this.updateInput}
           />
         )}
       </div>

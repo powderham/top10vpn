@@ -5,7 +5,8 @@ const ResultContainer = ({
   currentLocation,
   vpnLocation,
   results,
-  testPeriod
+  testPeriod,
+  updateInput
 }) => (
   <div>
     <div className="result-input-text">
@@ -14,10 +15,7 @@ const ResultContainer = ({
           vpnLocation.label
         }, Last ${testPeriod} days`}
       </div>
-      <div
-        className="change-input"
-        onClick={() => this.setState({ viewingResults: false })}
-      >
+      <div className="change-input" onClick={updateInput}>
         Change
       </div>
     </div>
@@ -30,6 +28,7 @@ const ResultContainer = ({
               displayName={result.displayName}
               dlMbps={result.dlMbps}
               pingAvg={result.pingAvg}
+              testPeriod={testPeriod}
             />
           );
         })

@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/css/Result.css";
+// import moment from "moment";
 
-const Result = ({ displayName, dlMbps, pingAvg }) => {
+const Result = ({ displayName, dlMbps, pingAvg, testPeriod }) => {
   return (
     <div className="result">
       <div className="result-header">
@@ -11,7 +12,7 @@ const Result = ({ displayName, dlMbps, pingAvg }) => {
       <div className="result-details">
         <div className="result-detail">
           <div className="result-detail-title">Period</div>
-          <div className="result-detail-data">Example data</div>
+          <div className="result-detail-data">{testPeriod}</div>
         </div>
         <div className="result-detail">
           <div className="result-detail-title">Download Speed</div>
