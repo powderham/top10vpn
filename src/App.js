@@ -44,11 +44,9 @@ class App extends Component {
         vpnLocation.value,
         testPeriod
       );
-      console.log(url);
       fetch(url)
         .then(response => response.json())
         .then(response => {
-          console.log(response);
           return [
             ...Object.keys(response)
               // Get an array of object from the object of objects
@@ -75,8 +73,9 @@ class App extends Component {
   }
 
   async handleResultView() {
+    this.setState({ loading: true });
     await this.fetchResults();
-    this.setState({ viewingResults: true });
+    this.setState({ viewingResults: true, loading: false });
   }
 
   render() {
@@ -85,6 +84,7 @@ class App extends Component {
       vpnLocation,
       testPeriod,
       results,
+      loading,
       viewingResults
     } = this.state;
     const selectArray = formatJsonObject(locations);
@@ -124,22 +124,32 @@ class App extends Component {
                   vpnLocation.label
                 }, Last ${testPeriod} days`}
               </div>
-
-              <div onClick={() => this.setState({ viewingResults: false })}>
+              <div
+                className="change-input"
+                onClick={() => this.setState({ viewingResults: false })}
+              >
                 Change
               </div>
             </div>
-            {results &&
-              results.map(result => {
-                return (
-                  <Result
-                    key={results[result]}
-                    serviceName={results[result]}
-                    dlMbps={result.dlMbps}
-                    pingAvg={result.pingAvg}
-                  />
-                );
-              })}
+            <div className="result-container">
+              {results ? (
+                results.map(result => {
+                  return (
+                    <Result
+                      key={results.displayName}
+                      displayName={result.displayName}
+                      dlMbps={result.dlMbps}
+                      pingAvg={result.pingAvg}
+                    />
+                  );
+                })
+              ) : (
+                <div>
+                  <span className="fa fa-circle-notch" />
+                  Loading
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>

@@ -1,0 +1,75 @@
+@import "Variables";
+
+.result {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  margin-top: 20px;
+
+  .result-details {
+    display: flex;
+    font-size: 14px;
+
+    .result-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2%;
+
+      border: 1px solid $grey;
+      width: 33%;
+      height: 4em;
+
+      text-align: left;
+      color: $black;
+
+      .result-detail-title {
+        margin-bottom: 5%;
+        color: $grey-dark;
+        font-size: 0.8em;
+      }
+
+      .result-detail-data {
+        .speed-detail {
+          font-size: 20px;
+        }
+        .speed-unit {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .result-header {
+    display: flex;
+    align-items: center;
+
+    padding: 2%;
+
+    height: 3em;
+    border: 1px solid $grey;
+
+    .result-logo {
+      margin-right: 5px;
+
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: pink;
+    }
+    .result-name {
+      margin-left: 15px;
+      font-size: 16px;
+    }
+  }
+}
+
+.result-input-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+
+  .change-input {
+    text-decoration: underline;
+  }
+}

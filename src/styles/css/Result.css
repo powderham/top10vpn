@@ -1,0 +1,50 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  margin-top: 20px; }
+  .result .result-details {
+    display: flex;
+    font-size: 14px; }
+    .result .result-details .result-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2%;
+      border: 1px solid #979797;
+      width: 33%;
+      height: 4em;
+      text-align: left;
+      color: #424242; }
+      .result .result-details .result-detail .result-detail-title {
+        margin-bottom: 5%;
+        color: #6e6e6e;
+        font-size: 0.8em; }
+      .result .result-details .result-detail .result-detail-data .speed-detail {
+        font-size: 20px; }
+      .result .result-details .result-detail .result-detail-data .speed-unit {
+        font-size: 14px; }
+  .result .result-header {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    height: 3em;
+    border: 1px solid #979797; }
+    .result .result-header .result-logo {
+      margin-right: 5px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: pink; }
+    .result .result-header .result-name {
+      margin-left: 15px;
+      font-size: 16px; }
+
+.result-input-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px; }
+  .result-input-text .change-input {
+    text-decoration: underline; }
+
+/*# sourceMappingURL=Result.css.map */

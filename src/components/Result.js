@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/css/Result.css";
 
-const Result = ({ serviceName, dlMbps, pingAvg }) => {
+const Result = ({ displayName, dlMbps, pingAvg }) => {
   return (
-    <div className="result-container">
+    <div className="result">
       <div className="result-header">
         <div className="result-logo" />
-        <div className="result-name">{serviceName}</div>
+        <div className="result-name">{displayName}</div>
       </div>
       <div className="result-details">
         <div className="result-detail">
@@ -14,11 +15,16 @@ const Result = ({ serviceName, dlMbps, pingAvg }) => {
         </div>
         <div className="result-detail">
           <div className="result-detail-title">Download Speed</div>
-          <div className="result-detail-data">{dlMbps}</div>
+          <div className="result-detail-data">
+            <span className="speed-detail">{dlMbps.toFixed(1)}</span>
+            <span className="speed-unit">Mb</span>
+          </div>
         </div>
         <div className="result-detail">
           <div className="result-detail-title">Ping time</div>
-          <div className="result-detail-data">{pingAvg}</div>
+          <div className="result-detail-data">
+            <span className="speed-detail">{pingAvg}</span>
+          </div>
         </div>
       </div>
     </div>

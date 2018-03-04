@@ -524,44 +524,6 @@ body {
       color: white;
       font-size: 14px; }
 
-.result-input-text {
-  display: flex;
-  justify-content: space-between; }
-
-.result-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2%; }
-  .result-container .result-details {
-    display: flex; }
-    .result-container .result-details .result-detail {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 2%;
-      border: 1px solid #979797;
-      width: 33%;
-      height: 4em;
-      text-align: left; }
-      .result-container .result-details .result-detail .result-detail-title {
-        margin-bottom: 5%;
-        color: #fa9f9f;
-        font-size: 0.8em; }
-  .result-container .result-header {
-    display: flex;
-    align-items: center;
-    padding: 2%;
-    height: 3em;
-    border: 1px solid #979797; }
-    .result-container .result-header .result-logo {
-      margin-right: 5px;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background-color: pink; }
-    .result-container .result-header .result-name {
-      font-weight: 600; }
-
 .input-header {
   font-size: 18px;
   text-align: left; }
